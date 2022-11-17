@@ -7,9 +7,9 @@ const DEBOUNCE_DELAY = 300;
 
 const input = document.querySelector('#search-box');
 
-const countrySearch = (event) => {
-    console.log(event);
-    // fetchCountries(name);
+const countrySearch = () => {
+    // console.dir(input.value);
+    fetchCountries(input.value);
 };
 
-input.addEventListener('input', countrySearch);
+input.addEventListener('input', debounce(countrySearch, DEBOUNCE_DELAY));
