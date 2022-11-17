@@ -12,11 +12,12 @@ const countrySearch = () => {
     fetchCountries(input.value)
     .then(data => {
         if(data.length > 10){
-
+            Notify.info('Too many matches found. Please enter a more specific name.');
+            return;
         }else if(data.length > 1 && data.length <= 10){
 
         }else {
-            
+
         }
         // console.log(data);
     })
