@@ -9,7 +9,20 @@ const input = document.querySelector('#search-box');
 
 const countrySearch = () => {
     console.dir(input.value);
-    fetchCountries(input.value);
+    fetchCountries(input.value)
+    .then(data => {
+        if(data.length > 10){
+
+        }else if(data.length > 1 && data.length <= 10){
+
+        }else {
+            
+        }
+        // console.log(data);
+    })
+    .catch(err => {
+        console.log(err);
+    });
 };
 
 input.addEventListener('input', debounce(countrySearch, DEBOUNCE_DELAY)); 
